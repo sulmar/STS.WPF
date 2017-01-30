@@ -4,22 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:STS.Ikar.WPFClient.Views"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        
         mc:Ignorable="d"
         Title="DriversView" Height="300" Width="300">
 
 
     <Window.Resources>
-        <sys:Double x:Key="ButtonWidth">100</sys:Double>
-        <sys:Double x:Key="ButtonHeight">50</sys:Double>
-        <SolidColorBrush x:Key="ButtonBackgroundColor">Black</SolidColorBrush>
-
-        <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource ButtonBackgroundColor}" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Width" Value="{StaticResource ButtonWidth}" />
-            <Setter Property="Height" Value="{StaticResource ButtonHeight}" />
-        </Style>
+  
         
     </Window.Resources>
     
