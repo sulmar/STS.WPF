@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:STS.Ikar.WPFClient.Views"
         mc:Ignorable="d"
         Title="DriverView" Height="300" Width="300">
+
+    <Window.Resources>
+        <ResourceDictionary Source="../Resources/WarehouseStyle.xaml" />
+    </Window.Resources>
+    
     <Grid>
         <Grid>
             <Grid.RowDefinitions>

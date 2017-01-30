@@ -7,16 +7,24 @@
     <sys:Double x:Key="ButtonHeight">50</sys:Double>
     <SolidColorBrush x:Key="ButtonBackgroundColor">Black</SolidColorBrush>
 
-    <Style TargetType="Button">
+    <Style x:Key="BaseButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource ButtonBackgroundColor}" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Width" Value="{StaticResource ButtonWidth}" />
         <Setter Property="Height" Value="{StaticResource ButtonHeight}" />
     </Style>
 
-    <Style TargetType="ListBox">
-        <Setter Property="Background" Value="Yellow" />
+    <Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}" />
+
+
+
+    <Style x:Key="DeleteButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Background" Value="Red" />
+        <Setter Property="Width" Value="40" />
     </Style>
+
+    
+  
 
 
 </ResourceDictionary>
