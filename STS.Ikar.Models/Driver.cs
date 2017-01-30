@@ -16,6 +16,6 @@ namespace STS.Ikar.Models
 
         public string Phone { get; set; }
 
-        public int NumberId { get; set; }
+        public string NumberId { get; set; }
     }
 }

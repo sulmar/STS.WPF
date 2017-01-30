@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STS.Ikar.Models", "STS.Ikar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STS.Ikar.Interfaces", "STS.Ikar.Interfaces\STS.Ikar.Interfaces.csproj", "{5D7774CE-7D57-464C-B54D-46D43A2A7AC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STS.Ikar.MockServices", "STS.Ikar.MockServices\STS.Ikar.MockServices.csproj", "{69AA7A99-6258-4537-8C94-B2D36D682222}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5D7774CE-7D57-464C-B54D-46D43A2A7AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D7774CE-7D57-464C-B54D-46D43A2A7AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D7774CE-7D57-464C-B54D-46D43A2A7AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69AA7A99-6258-4537-8C94-B2D36D682222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69AA7A99-6258-4537-8C94-B2D36D682222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69AA7A99-6258-4537-8C94-B2D36D682222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69AA7A99-6258-4537-8C94-B2D36D682222}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
