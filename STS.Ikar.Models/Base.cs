@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace STS.Ikar.Models
 {
-    public class Class1
+    public abstract class Base
     {
     }
 }
