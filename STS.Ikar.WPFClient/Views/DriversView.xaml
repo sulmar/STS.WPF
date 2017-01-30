@@ -4,8 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:STS.Ikar.WPFClient.Views"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="DriversView" Height="300" Width="300">
+
+
+    <Window.Resources>
+        <sys:Double x:Key="ButtonWidth">100</sys:Double>
+        <sys:Double x:Key="ButtonHeight">50</sys:Double>
+        <SolidColorBrush x:Key="ButtonBackgroundColor">Green</SolidColorBrush>
+    </Window.Resources>
+    
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -14,8 +23,16 @@
             </Grid.RowDefinitions>
 
             <DockPanel>
-                <Button Height="50" Width="100">Add</Button>
-                <Button Height="50" Width="100">Update</Button>
+                <Button 
+                    Height="{StaticResource ButtonHeight }" 
+                    Width="{StaticResource ButtonWidth}"
+                    Background="{StaticResource ButtonBackgroundColor}"
+                    >Add</Button>
+                <Button Height="{StaticResource ButtonHeight}" 
+                        Width="{StaticResource ButtonWidth}"
+                        Background="{StaticResource ButtonBackgroundColor}"
+                        >
+                    Update</Button>
                 <Border/>
             </DockPanel>
 
