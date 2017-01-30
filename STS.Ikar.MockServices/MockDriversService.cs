@@ -61,5 +61,11 @@ namespace STS.Ikar.MockServices
         {
             throw new NotSupportedException();
         }
+
+
+        public void Delete(int driverId)
+        {
+            throw new NotSupportedException();
+        }
     }
 }
