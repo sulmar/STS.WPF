@@ -22,11 +22,11 @@
             </Grid.RowDefinitions>
 
             <DockPanel>
-                <Button Style="{StaticResource ButtonStyle}">Add</Button>
-                <Button Style="{StaticResource ButtonStyle}">Update</Button>
+                <Button>Add</Button>
+                <Button>Update</Button>
                 <Border/>
 
-                <Button Style="{StaticResource ButtonStyle}">Delete</Button>
+                <Button>Delete</Button>
             </DockPanel>
 
 

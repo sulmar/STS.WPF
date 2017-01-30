@@ -15,8 +15,9 @@
 
 
             <DockPanel>
-                <Button Style="{StaticResource ButtonStyle}">Save</Button>
-                <Button Style="{StaticResource ButtonStyle}">Cancel</Button>
+                <Button>Save</Button>
+                <Button>Cancel</Button>
+                <Button>Send</Button>
             </DockPanel>
         </Grid>
         
