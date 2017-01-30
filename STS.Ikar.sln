@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STS.Ikar.UnitTests", "STS.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STS.Ikar.DAL", "STS.Ikar.DAL\STS.Ikar.DAL.csproj", "{462C86E7-0E9A-4790-A502-4D0469B5835C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STS.Ikar.WPFClient", "STS.Ikar.WPFClient\STS.Ikar.WPFClient.csproj", "{D5851FF9-C42E-44B3-9EAE-E91197F4F63D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{462C86E7-0E9A-4790-A502-4D0469B5835C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{462C86E7-0E9A-4790-A502-4D0469B5835C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{462C86E7-0E9A-4790-A502-4D0469B5835C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5851FF9-C42E-44B3-9EAE-E91197F4F63D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5851FF9-C42E-44B3-9EAE-E91197F4F63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5851FF9-C42E-44B3-9EAE-E91197F4F63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5851FF9-C42E-44B3-9EAE-E91197F4F63D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

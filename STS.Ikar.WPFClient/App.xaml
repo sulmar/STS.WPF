@@ -1,0 +1,9 @@
+﻿<Application x:Class="STS.Ikar.WPFClient.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:STS.Ikar.WPFClient"
+             StartupUri="Views/DriversView.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
