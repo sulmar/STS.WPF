@@ -16,9 +16,9 @@ namespace STS.Ikar.Models
 
         public Driver Driver { get; set; }
 
-        public string ArrivalAddress { get; set; }
+        public Address ArrivalAddress { get; set; }
 
-        public string DeliveryAddress { get; set; }
+        public Address DeliveryAddress { get; set; }
 
         public DateTime CreateDate { get; set; }
 

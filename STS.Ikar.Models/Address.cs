@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace STS.Ikar.Models
 {
-    public class Customer : Base
+    public class Address : Base
     {
-        public int CustomerId { get; set; }
+        public string Street { get; set; }
 
-        public string Name { get; set; }
+        public string City { get; set; }
 
-        public Address Address { get; set; }
+        public string Postcode { get; set; }
     }
 }
