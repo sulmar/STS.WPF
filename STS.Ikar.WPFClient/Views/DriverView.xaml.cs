@@ -23,5 +23,15 @@ namespace STS.Ikar.WPFClient.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var viewmodel = DataContext as ViewModels.DriverViewModel;
+
+            var driver = viewmodel.Driver;
+
+            driver.LastName = "Kowalski";
+
+        }
     }
 }

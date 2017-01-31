@@ -25,7 +25,7 @@
 
 
             <DockPanel>
-                <Button>Save</Button>
+                <Button Click="Button_Click">Save</Button>
                 <Button>Cancel</Button>
                 <Button>Send</Button>
             </DockPanel>
@@ -34,6 +34,7 @@
             <StackPanel Grid.Row="1" DataContext="{Binding Driver}">
                 <TextBox Text="{Binding FirstName}" />
                 <TextBox Text="{Binding LastName}" />
+                <TextBlock Text="{Binding FullName, Mode=OneWay}" />
                 <TextBox Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type Window}}, Path=DataContext.CurrentDate}" />
             </StackPanel>
         </Grid>
