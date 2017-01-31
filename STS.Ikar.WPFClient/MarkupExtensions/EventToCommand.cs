@@ -21,8 +21,6 @@ namespace STS.Ikar.WPFClient.MarkupExtensions
         // not that useful
         public ICommand Command { get; set; }
 
-        //private string _commandPath;
-        //private ICommand _command;
         private Type _eventArgsType;
 
         public EventToCommand(string bindingCommandPath)
