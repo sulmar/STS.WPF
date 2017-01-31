@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,47 +7,17 @@ using System.Threading.Tasks;
 
 namespace STS.Ikar.Models
 {
+
+    // PM> Install-Package PropertyChanged.Fody
+
+    [ImplementPropertyChanged]
     public class Driver : Base
     {
         public int DriverId { get; set; }
 
-        #region FirstName
+        public string FirstName { get; set; }
 
-        private string _FirstName;
-
-        public string FirstName
-        {
-            get { return _FirstName; }
-            set
-            {
-                _FirstName = value;
-
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(FullName));
-            }
-        }
-
-        #endregion
-
-        #region LastName
-
-        private string _LastName;
-
-        public string LastName
-        {
-            get { return _LastName; }
-            set {
-
-                _LastName = value;
-
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(FullName));
-
-            }
-        }
-
-        #endregion
-
+        public string LastName { get; set; }
 
         public string Phone { get; set; }
 
