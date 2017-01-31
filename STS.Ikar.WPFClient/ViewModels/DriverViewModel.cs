@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -39,6 +40,12 @@ namespace STS.Ikar.WPFClient.ViewModels
         }
 
 
+        public void Cancel()
+        {
+
+        }
+
+
         #region SaveCommand
 
 
@@ -50,7 +57,7 @@ namespace STS.Ikar.WPFClient.ViewModels
             {
                 if (_SaveCommand==null)
                 {
-                    _SaveCommand = new RelayCommand(() => Save(), () => CanSave);
+                    _SaveCommand = new RelayCommand(() => SaveAsync(), () => CanSave);
                 }
 
                 return _SaveCommand;
@@ -58,9 +65,55 @@ namespace STS.Ikar.WPFClient.ViewModels
         }
 
 
+        public Task<string> UpdateFirstNameAsync()
+        {
+            return Task.Run(() => UpdateFirstName());
+        }
+
+        public Task<string> UpdateLastNameAsync()
+        {
+            return Task.Run(() => UpdateLastName());
+        }
+
+
+        public string UpdateFirstName()
+        {
+            Thread.Sleep(7000);
+
+            this.Driver.FirstName = "Ala";
+
+            return "Zmiana imienia";
+        }
+
+        public string UpdateLastName()
+        {
+            Thread.Sleep(4000);
+
+            this.Driver.LastName = "MaKota";
+
+            return "Zmiana nazwiska";
+        }
+
         public void Save()
         {
-            this.Driver.LastName = "Nowak";
+            var result = UpdateFirstName();
+
+            result += UpdateLastName();
+        }
+
+
+
+        public void SaveAsync2()
+        {
+            UpdateFirstNameAsync()
+                .ContinueWith(result=> UpdateLastNameAsync());
+        }
+
+        public async Task SaveAsync()
+        {
+            var result = await UpdateFirstNameAsync();
+
+            var result2 = await UpdateLastNameAsync();
         }
 
         public bool CanSave => !string.IsNullOrEmpty(Driver.FirstName) && !string.IsNullOrEmpty(Driver.LastName);

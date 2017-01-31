@@ -33,8 +33,8 @@
                         <b:ButtonBehavior Command="{Binding SaveCommand}" />
                     </i:Interaction.Behaviors>
                 </Button>
-                <Button>Cancel</Button>
-                <Button Click="{m:EventToCommand SaveCommand}">Send</Button>
+                <Button Click="{m:MethodBinding Cancel}">Cancel</Button>
+                <Button MouseEnter="{m:EventToCommand SaveCommand}">Send</Button>
             </DockPanel>
 
 
