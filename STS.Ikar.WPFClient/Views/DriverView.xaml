@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:STS.Ikar.WPFClient.Views"
+        xmlns:vm="clr-namespace:STS.Ikar.WPFClient.ViewModels"
         mc:Ignorable="d"
         Title="DriverView" Height="300" Width="300">
 
+    <Window.DataContext>
+        <vm:DriverViewModel />
+    </Window.DataContext>
+    
     <Window.Resources>
         <ResourceDictionary Source="../Resources/WarehouseStyle.xaml" />
     </Window.Resources>
@@ -24,6 +29,13 @@
                 <Button>Cancel</Button>
                 <Button>Send</Button>
             </DockPanel>
+
+
+            <StackPanel Grid.Row="1" DataContext="{Binding Driver}">
+                <TextBox Text="{Binding FirstName}" />
+                <TextBox Text="{Binding LastName}" />
+                <TextBox Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type Window}}, Path=DataContext.CurrentDate}" />
+            </StackPanel>
         </Grid>
         
     </Grid>
