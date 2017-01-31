@@ -10,51 +10,74 @@ using System.Windows.Markup;
 
 namespace STS.Ikar.WPFClient.MarkupExtensions
 {
+    /// <summary>
+    /// Inspired by
+    /// http://blogs.microsoft.co.il/pavely/2012/04/07/wpf-45-markup-extension-for-events/
+    /// </summary>
     public class EventToCommand : MarkupExtension
     {
-        private string _commandPath;
-        private ICommand _command;
+        public string BindingCommandPath { get; set; }
+
+        // not that useful
+        public ICommand Command { get; set; }
+
+        //private string _commandPath;
+        //private ICommand _command;
         private Type _eventArgsType;
 
-        public EventToCommand(string commandPath)
+        public EventToCommand(string bindingCommandPath)
         {
-            _commandPath = commandPath;
+            BindingCommandPath = bindingCommandPath;
         }
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            Delegate customDelegate = null;
-            IProvideValueTarget target = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
-            if (target != null)
+            var pvt = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
+            if (pvt != null)
             {
-                EventInfo eventInfo = target.TargetProperty as EventInfo;
-                MethodInfo methodInfo = GetType().GetMethod("InvokeCommand", BindingFlags.NonPublic | BindingFlags.Instance);
-                Type parameterType = null;
-                if (eventInfo != null)
-                    parameterType = eventInfo.EventHandlerType;
-
-                if (parameterType != null)
+                var evt = pvt.TargetProperty as EventInfo;
+                var doAction = GetType().GetMethod("DoAction", BindingFlags.NonPublic | BindingFlags.Instance);
+                Type dlgType = null;
+                if (evt != null)
                 {
-                    _eventArgsType = parameterType.GetMethod("Invoke").GetParameters()[1].ParameterType;
-                    customDelegate = Delegate.CreateDelegate(parameterType, this, methodInfo);
+                    dlgType = evt.EventHandlerType;
+                }
+                var mi = pvt.TargetProperty as MethodInfo;
+                if (mi != null)
+                {
+                    dlgType = mi.GetParameters()[1].ParameterType;
+                }
+                if (dlgType != null)
+                {
+                    _eventArgsType = dlgType.GetMethod("Invoke").GetParameters()[1].ParameterType;
+                    return Delegate.CreateDelegate(dlgType, this, doAction);
                 }
             }
-            return customDelegate;
+            return null;
         }
-        private void InvokeCommand(object sender, RoutedEventArgs e)
+
+        void DoAction(object sender, RoutedEventArgs e)
         {
-            var dataContext = (sender as FrameworkElement).DataContext;
-            if (_commandPath != null)
+            var dc = (sender as FrameworkElement).DataContext;
+            if (BindingCommandPath != null)
             {
-                _command = (ICommand)ParseCommandPath(dataContext, _commandPath);
+                Command = (ICommand)ParsePropertyPath(dc, BindingCommandPath);
             }
-            var cmdParams = Activator.CreateInstance(_eventArgsType);
-            if (_command != null && _command.CanExecute(cmdParams))
-                _command.Execute(cmdParams);
+            Type eventArgsType = typeof(EventCommandArgs<>).MakeGenericType(_eventArgsType);
+            var cmdParams = Activator.CreateInstance(eventArgsType, sender, e);
+            if (Command != null && Command.CanExecute(cmdParams))
+                Command.Execute(cmdParams);
         }
-        private Object ParseCommandPath(object target, string commandPath)
+
+
+        static object ParsePropertyPath(object target, string path)
         {
-            return target.GetType().GetProperty(commandPath).GetValue(target);
+            var props = path.Split('.');
+            foreach (var prop in props)
+            {
+                target = target.GetType().GetProperty(prop).GetValue(target);
+            }
+            return target;
         }
     }
 }
