@@ -18,8 +18,14 @@ namespace STS.Ikar.WPFClient.ViewModels
         private IDriversService _DriversService;
 
         public DriversViewModel()
+            : this(new MockDriversService())
         {
-            _DriversService = new MockDriversService();
+
+        }
+        
+        public DriversViewModel(IDriversService driversService)
+        {
+            _DriversService = driversService;
 
             Drivers = _DriversService.Get();
         }
