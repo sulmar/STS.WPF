@@ -13,6 +13,8 @@ namespace STS.Ikar.WPFClient.ViewModels
     {
         public IList<Driver> Drivers { get; set; }
 
+        public Driver SelectedDriver { get; set; }
+
         private IDriversService _DriversService;
 
         public DriversViewModel()

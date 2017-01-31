@@ -39,12 +39,16 @@
 
             <!--#region Content -->
 
+            <StackPanel>
             <ListBox Grid.Row="1" 
                      ItemsSource="{Binding Drivers}" 
                      ItemTemplate="{StaticResource DriverTemplate}"
-                     
-                     
+                     SelectedItem="{Binding SelectedDriver}"
                      />
+
+            <ListView ItemsSource="{Binding Drivers}"
+                      ItemTemplate="{StaticResource DriverTemplate}" />
+            </StackPanel>
 
             <!--#endregion -->
 
