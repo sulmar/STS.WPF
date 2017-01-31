@@ -34,7 +34,7 @@
                     </i:Interaction.Behaviors>
                 </Button>
                 <Button>Cancel</Button>
-                <Button>Send</Button>
+                <Button Click="{m:EventToCommand SaveCommand}">Send</Button>
             </DockPanel>
 
 

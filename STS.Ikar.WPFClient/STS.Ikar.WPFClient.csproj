@@ -71,6 +71,7 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Converters\DateTimeConverter.cs" />
     <Compile Include="MarkupExtensions\CurrentDate.cs" />
+    <Compile Include="MarkupExtensions\EventToCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DriversViewModel.cs" />
     <Compile Include="ViewModels\DriverViewModel.cs" />
