@@ -5,15 +5,12 @@
                     xmlns:local="clr-namespace:STS.Ikar.WPFClient.Resources">
 
 
-    <c:DateTimeConverter x:Key="DateTimeConverter" />
-
-    
     <DataTemplate x:Key="DriverTemplate" DataType="model:Driver">
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="{Binding FirstName}" />
             <TextBlock Text="{Binding LastName}" />
             <TextBlock Text="{Binding Phone}" />
-            <TextBlock Text="{Binding Birthday, Converter={StaticResource DateTimeConverter}}" />
+            <TextBlock Text="{Binding Birthday, Converter={c:DateTimeConverter}}" />
         </StackPanel>
     </DataTemplate>
     
