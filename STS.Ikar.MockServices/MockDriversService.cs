@@ -19,6 +19,7 @@ namespace STS.Ikar.MockServices
                 LastName = "Sulecki",
                 NumberId = "539875423",
                 Phone = "609-851-649",
+                Birthday = DateTime.Parse("2000-11-06")
             },
 
             new Driver
@@ -28,6 +29,7 @@ namespace STS.Ikar.MockServices
                 LastName = "Sulecki",
                 NumberId = "5747474",
                 Phone = "555-000-444",
+                Birthday = DateTime.Parse("2008-12-06")
             },
 
             new Driver
@@ -37,6 +39,7 @@ namespace STS.Ikar.MockServices
                 LastName = "Sulecka",
                 NumberId = "5757565",
                 Phone = "555-111-222",
+                Birthday = DateTime.Parse("2001-12-06")
             },
 
             new Driver
@@ -46,6 +49,7 @@ namespace STS.Ikar.MockServices
                 LastName = "Nowak",
                 NumberId = "5757465",
                 Phone = "555-777-222",
+                Birthday = DateTime.Parse("2000-02-16")
             },
 
         };

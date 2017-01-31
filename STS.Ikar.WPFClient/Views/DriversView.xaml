@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:STS.Ikar.WPFClient.Views"
         xmlns:vm="clr-namespace:STS.Ikar.WPFClient.ViewModels"
+      
         mc:Ignorable="d"
         Title="DriversView" Height="300" Width="300">
 
@@ -13,8 +14,6 @@
     </Window.DataContext>
     
     <Window.Resources>
-  
-        
     </Window.Resources>
     
     <Grid>

@@ -18,6 +18,8 @@ namespace STS.Ikar.Models
 
         public string NumberId { get; set; }
 
+        public DateTime Birthday { get; set; }
+
         public string FullName => $"{FirstName} {LastName}";
 
         public override string ToString() => FullName;

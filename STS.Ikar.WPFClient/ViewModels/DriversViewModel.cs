@@ -27,6 +27,11 @@ namespace STS.Ikar.WPFClient.ViewModels
         {
             _DriversService = driversService;
 
+            Load();
+        }
+
+        private void Load()
+        {
             Drivers = _DriversService.Get();
         }
     }
