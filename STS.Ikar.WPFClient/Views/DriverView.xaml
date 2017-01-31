@@ -7,6 +7,7 @@
         xmlns:vm="clr-namespace:STS.Ikar.WPFClient.ViewModels"
         xmlns:b="clr-namespace:STS.Ikar.WPFClient.Behaviors"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:m="clr-namespace:STS.Ikar.WPFClient.MarkupExtensions"
         mc:Ignorable="d"
         Title="DriverView" Height="300" Width="300">
 
@@ -45,6 +46,8 @@
 
                 <Slider x:Name="WeightSlider" Minimum="0" Maximum="150" Value="{Binding ElementName=WeightTextBox, Path=Text}"  />
                 <TextBox x:Name="WeightTextBox" Text="{Binding Weight}" />
+
+                <TextBlock Text="{m:CurrentDate}" />
             </StackPanel>
         </Grid>
         
