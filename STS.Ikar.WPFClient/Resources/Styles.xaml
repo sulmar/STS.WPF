@@ -23,8 +23,10 @@
         <Setter Property="Width" Value="40" />
     </Style>
 
-    
-  
+
+    <Style  TargetType="TextBlock">
+        <Setter Property="Margin" Value="10" />
+    </Style>
 
 
 </ResourceDictionary>

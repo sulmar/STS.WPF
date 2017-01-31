@@ -39,7 +39,12 @@
 
             <!--#region Content -->
 
-            <ListBox Grid.Row="1" ItemsSource="{Binding Drivers}" />
+            <ListBox Grid.Row="1" 
+                     ItemsSource="{Binding Drivers}" 
+                     ItemTemplate="{StaticResource DriverTemplate}"
+                     
+                     
+                     />
 
             <!--#endregion -->
 
