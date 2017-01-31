@@ -19,7 +19,8 @@ namespace STS.Ikar.MockServices
                 LastName = "Sulecki",
                 NumberId = "539875423",
                 Phone = "609-851-649",
-                Birthday = DateTime.Parse("2000-11-06")
+                Birthday = DateTime.Parse("2000-11-06"),
+                Weight = 65,
             },
 
             new Driver

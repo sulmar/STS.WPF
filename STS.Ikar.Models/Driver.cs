@@ -25,6 +25,8 @@ namespace STS.Ikar.Models
 
         public DateTime Birthday { get; set; }
 
+        public int Weight { get; set; }
+
         public string FullName => $"{FirstName} {LastName}";
 
         public override string ToString() => FullName;

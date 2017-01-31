@@ -29,7 +29,7 @@
             <DockPanel>
                 <Button Command="{Binding SaveCommand}" Content="Save"  >
                     <i:Interaction.Behaviors>
-                        <b:ButtonBehavior />
+                        <b:ButtonBehavior Command="{Binding SaveCommand}" />
                     </i:Interaction.Behaviors>
                 </Button>
                 <Button>Cancel</Button>
@@ -42,6 +42,9 @@
                 <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBlock Text="{Binding FullName, Mode=OneWay}" />
                 <TextBox Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type Window}}, Path=DataContext.CurrentDate}" />
+
+                <Slider x:Name="WeightSlider" Minimum="0" Maximum="150" Value="{Binding ElementName=WeightTextBox, Path=Text}"  />
+                <TextBox x:Name="WeightTextBox" Text="{Binding Weight}" />
             </StackPanel>
         </Grid>
         
