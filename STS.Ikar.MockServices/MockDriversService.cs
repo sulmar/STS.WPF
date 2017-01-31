@@ -80,5 +80,21 @@ namespace STS.Ikar.MockServices
         {
             throw new NotSupportedException();
         }
+
+        public Driver Get(int id)
+        {
+
+            var query = drivers
+                .Where(driver => driver.Birthday.Year > 2000);
+
+            query = query
+                .Where(driver => driver.LastName.Contains("cki"));
+
+            query = query
+                .OrderBy(driver => driver.LastName);
+
+
+            return drivers.Single(d => d.DriverId == id);
+        }
     }
 }

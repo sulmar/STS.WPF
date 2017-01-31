@@ -20,6 +20,11 @@ namespace STS.Ikar.DAL
             return new List<Driver>();
         }
 
+        public Driver Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Driver driver)
         {
             throw new NotImplementedException();

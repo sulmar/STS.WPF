@@ -11,6 +11,8 @@ namespace STS.Ikar.Interfaces
     {
         IList<Driver> Get();
 
+        Driver Get(int id);
+
         void Add(Driver driver);
 
         void Update(Driver driver);
