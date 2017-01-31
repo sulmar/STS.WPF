@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:STS.Ikar.WPFClient.Views"
         xmlns:vm="clr-namespace:STS.Ikar.WPFClient.ViewModels"
+        xmlns:b="clr-namespace:STS.Ikar.WPFClient.Behaviors"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="DriverView" Height="300" Width="300">
 
@@ -25,7 +27,11 @@
 
 
             <DockPanel>
-                <Button Command="{Binding SaveCommand}" >Save</Button>
+                <Button Command="{Binding SaveCommand}" Content="Save"  >
+                    <i:Interaction.Behaviors>
+                        <b:ButtonBehavior />
+                    </i:Interaction.Behaviors>
+                </Button>
                 <Button>Cancel</Button>
                 <Button>Send</Button>
             </DockPanel>
