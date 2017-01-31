@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using STS.Ikar.Models;
+using System.Threading;
 
 namespace STS.Ikar.MockServices
 {
@@ -68,6 +69,9 @@ namespace STS.Ikar.MockServices
 
         public IList<Driver> Get()
         {
+            Thread.Sleep(5000);
+
+
             return drivers;
         }
 
