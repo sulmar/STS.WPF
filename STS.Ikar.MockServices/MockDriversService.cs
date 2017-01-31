@@ -39,6 +39,15 @@ namespace STS.Ikar.MockServices
                 Phone = "555-111-222",
             },
 
+            new Driver
+            {
+                DriverId = 4,
+                FirstName = "Jan",
+                LastName = "Nowak",
+                NumberId = "5757465",
+                Phone = "555-777-222",
+            },
+
         };
 
         public void Add(Driver driver)

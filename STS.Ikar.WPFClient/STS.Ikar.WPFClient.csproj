@@ -59,6 +59,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DriversViewModel.cs" />
     <Compile Include="Views\DriversView.xaml.cs">
       <DependentUpon>DriversView.xaml</DependentUpon>
     </Compile>
@@ -111,6 +113,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\STS.Ikar.Interfaces\STS.Ikar.Interfaces.csproj">
+      <Project>{5D7774CE-7D57-464C-B54D-46D43A2A7AC5}</Project>
+      <Name>STS.Ikar.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\STS.Ikar.MockServices\STS.Ikar.MockServices.csproj">
+      <Project>{69AA7A99-6258-4537-8C94-B2D36D682222}</Project>
+      <Name>STS.Ikar.MockServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\STS.Ikar.Models\STS.Ikar.Models.csproj">
+      <Project>{8E39351C-693A-4169-AEA3-635CF196B035}</Project>
+      <Name>STS.Ikar.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

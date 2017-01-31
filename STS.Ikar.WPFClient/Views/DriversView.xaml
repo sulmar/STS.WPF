@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:STS.Ikar.WPFClient.Views"
-        
+        xmlns:vm="clr-namespace:STS.Ikar.WPFClient.ViewModels"
         mc:Ignorable="d"
         Title="DriversView" Height="300" Width="300">
 
-
+    <Window.DataContext>
+        <vm:DriversViewModel />
+    </Window.DataContext>
+    
     <Window.Resources>
   
         
@@ -35,13 +38,9 @@
             
 
             <!--#region Content -->
-            
-            <ListBox Grid.Row="1">
-                <ListBoxItem>Driver 1</ListBoxItem>
-                <ListBoxItem>Driver 2</ListBoxItem>
-                <ListBoxItem>Driver 3</ListBoxItem>
-            </ListBox>
-            
+
+            <ListBox Grid.Row="1" ItemsSource="{Binding Drivers}" />
+
             <!--#endregion -->
 
         </Grid>

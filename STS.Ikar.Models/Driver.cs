@@ -17,5 +17,9 @@ namespace STS.Ikar.Models
         public string Phone { get; set; }
 
         public string NumberId { get; set; }
+
+        public string FullName => $"{FirstName} {LastName}";
+
+        public override string ToString() => FullName;
     }
 }
