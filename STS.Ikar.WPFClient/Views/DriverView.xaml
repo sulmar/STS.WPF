@@ -25,15 +25,15 @@
 
 
             <DockPanel>
-                <Button Click="Button_Click">Save</Button>
+                <Button Command="{Binding SaveCommand}" >Save</Button>
                 <Button>Cancel</Button>
                 <Button>Send</Button>
             </DockPanel>
 
 
             <StackPanel Grid.Row="1" DataContext="{Binding Driver}">
-                <TextBox Text="{Binding FirstName}" />
-                <TextBox Text="{Binding LastName}" />
+                <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBlock Text="{Binding FullName, Mode=OneWay}" />
                 <TextBox Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type Window}}, Path=DataContext.CurrentDate}" />
             </StackPanel>

@@ -1,11 +1,13 @@
 ﻿using STS.Ikar.Interfaces;
 using STS.Ikar.MockServices;
 using STS.Ikar.Models;
+using STS.Ikar.WPFClient.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace STS.Ikar.WPFClient.ViewModels
 {
@@ -35,5 +37,34 @@ namespace STS.Ikar.WPFClient.ViewModels
             Driver = _DriversService.Get(1);
             CurrentDate = DateTime.Now;
         }
+
+
+        #region SaveCommand
+
+
+        private ICommand _SaveCommand;
+
+        public ICommand SaveCommand
+        {
+            get
+            {
+                if (_SaveCommand==null)
+                {
+                    _SaveCommand = new RelayCommand(() => Save(), () => CanSave);
+                }
+
+                return _SaveCommand;
+            }
+        }
+
+
+        public void Save()
+        {
+            this.Driver.LastName = "Nowak";
+        }
+
+        public bool CanSave => !string.IsNullOrEmpty(Driver.FirstName) && !string.IsNullOrEmpty(Driver.LastName);
+
+        #endregion
     }
 }
