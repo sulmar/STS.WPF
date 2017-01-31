@@ -21,6 +21,8 @@
                 <RowDefinition Height="7*" />
             </Grid.RowDefinitions>
 
+            <!--#region Header -->
+            
             <DockPanel>
                 <Button>Add</Button>
                 <Button>Update</Button>
@@ -28,13 +30,19 @@
 
                 <Button Style="{StaticResource DeleteButtonStyle}">Delete</Button>
             </DockPanel>
+            
+            <!--#endregion -->
+            
 
-
+            <!--#region Content -->
+            
             <ListBox Grid.Row="1">
                 <ListBoxItem>Driver 1</ListBoxItem>
                 <ListBoxItem>Driver 2</ListBoxItem>
                 <ListBoxItem>Driver 3</ListBoxItem>
             </ListBox>
+            
+            <!--#endregion -->
 
         </Grid>
         
