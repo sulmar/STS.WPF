@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:STS.Ikar.WPFClient.Views"
         xmlns:vm="clr-namespace:STS.Ikar.WPFClient.ViewModels"
         xmlns:m="clr-namespace:STS.Ikar.WPFClient.MarkupExtensions"
+        xmlns:uc="clr-namespace:STS.Ikar.WPFClient.UserControls"
         Loaded="{m:MethodBinding Load}"
         mc:Ignorable="d"
         Title="CMRView" Height="300" Width="300">
@@ -15,21 +16,12 @@
     </Window.DataContext>
     <Grid>
 
+
         <StackPanel>
+            <uc:AddressView DataContext="{Binding CMR.ArrivalAddress}" />
 
-            <StackPanel DataContext="{Binding CMR.ArrivalAddress}">
-            <TextBox Text="{Binding City}" />
-            <TextBox Text="{Binding Street}" />
-            <TextBox Text="{Binding Postcode}" />
-        </StackPanel>
-
-            <StackPanel DataContext="{Binding CMR.DeliveryAddress}">
-            <TextBox Text="{Binding City}" />
-            <TextBox Text="{Binding Street}" />
-            <TextBox Text="{Binding Postcode}" />
-         </StackPanel>
+            <uc:AddressView DataContext="{Binding CMR.DeliveryAddress}" />
 
         </StackPanel>
-
     </Grid>
 </Window>

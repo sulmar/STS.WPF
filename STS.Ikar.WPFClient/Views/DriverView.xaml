@@ -40,8 +40,9 @@
 
 
             <StackPanel Grid.Row="1" DataContext="{Binding Driver}">
-                <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
-                <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                <TextBox Text="{Binding Birthday, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
                 <TextBlock Text="{Binding FullName, Mode=OneWay}" />
                 <TextBox Text="{Binding RelativeSource={RelativeSource FindAncestor,  AncestorType={x:Type Window}}, Path=DataContext.CurrentDate}" />
 
