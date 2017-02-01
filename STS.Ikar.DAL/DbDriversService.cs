@@ -10,24 +10,40 @@ namespace STS.Ikar.DAL
 {
     public class DbDriversService : IDriversService
     {
+
+
         public void Add(Driver driver)
         {
-            throw new NotImplementedException();
+            using (var context = new IkarContext())
+            {
+                context.Drivers.Add(driver);
+
+                context.SaveChanges();
+            }
         }
 
         public IList<Driver> Get()
         {
-            return new List<Driver>();
+            using (var context = new IkarContext())
+            {
+                return context.Drivers.ToList();
+            }
         }
 
         public Driver Get(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new IkarContext())
+            {
+                return context.Drivers.SingleOrDefault(d => d.DriverId == id);
+            }
         }
 
         public void Update(Driver driver)
         {
-            throw new NotImplementedException();
+            using (var context = new IkarContext())
+            {
+                context.SaveChanges();
+            }
         }
 
         
