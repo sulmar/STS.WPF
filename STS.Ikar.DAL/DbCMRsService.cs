@@ -31,6 +31,9 @@ namespace STS.Ikar.DAL
                 // Pobieranie wskazanej kolekcji
                 await context.Entry(cmr).Collection(p => p.WarehouseDocuments).LoadAsync();
 
+                await context.Entry(cmr).Reference(p => p.ArrivalAddress).LoadAsync();
+                await context.Entry(cmr).Reference(p => p.DeliveryAddress).LoadAsync();
+
                 // Pobranie wskaznej właściwości
                 await context.Entry(cmr).Reference(p => p.Truck).LoadAsync();
 

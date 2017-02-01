@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201702011031085_ChangeCreateDateCRM.Designer.cs">
       <DependentUpon>201702011031085_ChangeCreateDateCRM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702011052567_ChangeDateTimeToDateTime2.cs" />
+    <Compile Include="Migrations\201702011052567_ChangeDateTimeToDateTime2.Designer.cs">
+      <DependentUpon>201702011052567_ChangeDateTimeToDateTime2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702011031085_ChangeCreateDateCRM.resx">
       <DependentUpon>201702011031085_ChangeCreateDateCRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011052567_ChangeDateTimeToDateTime2.resx">
+      <DependentUpon>201702011052567_ChangeDateTimeToDateTime2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

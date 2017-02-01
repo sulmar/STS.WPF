@@ -5,6 +5,7 @@ using STS.Ikar.Interfaces;
 using STS.Ikar.MockServices;
 using STS.Ikar.DAL;
 using STS.Ikar.Models;
+using STS.Ikar.Models.Validators;
 
 namespace STS.Ikar.UnitTests
 {
@@ -17,6 +18,23 @@ namespace STS.Ikar.UnitTests
         public void Init()
         {
              driversService = new MockDriversService();
+        }
+
+
+        [TestMethod]
+        public void ValidateTest()
+        {
+            var driver = new Driver();
+
+            var validator = new DriverValidator();
+            var results = validator.Validate(driver);
+
+            if (!results.IsValid)
+            {
+                var errors = results.Errors;
+            }
+
+
         }
 
         [TestMethod]
