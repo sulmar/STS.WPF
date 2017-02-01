@@ -1,4 +1,6 @@
-﻿using PropertyChanged;
+﻿using FluentValidation.Attributes;
+using PropertyChanged;
+using STS.Ikar.Models.Validators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,26 +14,12 @@ namespace STS.Ikar.Models
     // PM> Install-Package PropertyChanged.Fody
 
     [ImplementPropertyChanged]
-    public class Driver : Base, IDataErrorInfo
+    [Validator(typeof(DriverValidator))]
+    public class Driver : DataErrorInfo
     {
         public int DriverId { get; set; }
 
-        private string _FistName;
-
-        public string FirstName
-        {
-            get { return _FistName; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentNullException("Imię jest puste");
-
-                _FistName = value;
-
-            }
-        }
-
-
+        public string FirstName { get; set; }
 
         public string LastName { get; set; }
 

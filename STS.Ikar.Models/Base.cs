@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace STS.Ikar.Models
 {
-    public abstract class Base : INotifyPropertyChanged
+    public abstract class Base : DataErrorInfo, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
