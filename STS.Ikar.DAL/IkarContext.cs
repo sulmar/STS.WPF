@@ -1,4 +1,6 @@
-﻿using STS.Ikar.Models;
+﻿using STS.Ikar.DAL.Configurations;
+using STS.Ikar.DAL.Conventions;
+using STS.Ikar.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -31,6 +33,20 @@ namespace STS.Ikar.DAL
             //this.Configuration.LazyLoadingEnabled = true;
             //this.Configuration.ProxyCreationEnabled = true;
 
+        }
+
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations
+                .Add(new TruckConfiguration())
+                .Add(new CMRConfiguration());
+
+            modelBuilder.Conventions
+                .Add(new DateTime2Convention());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
