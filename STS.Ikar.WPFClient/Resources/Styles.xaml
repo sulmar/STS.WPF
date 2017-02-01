@@ -17,10 +17,6 @@
     <Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}" />
 
 
-    <Style TargetType="TextBox">
-        <Setter Property="FontSize" Value="18" />
-    </Style>
-
 
 
     <Style x:Key="DeleteButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
@@ -35,5 +31,28 @@
 
     </Style>
 
+
+    <ControlTemplate x:Key="ErrorTemplate">
+        <StackPanel Orientation="Horizontal">
+            <AdornedElementPlaceholder />
+            <Grid Margin="2,0,0,0">
+                <Ellipse Width="20" Height="20" Fill="Red"/>
+                <TextBlock Foreground="White" Text="X" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+    </ControlTemplate>
+    
+    <Style TargetType="TextBox">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="BorderBrush"  Value="DarkBlue"/>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Margin" Value="0,1,0,1" />
+        <Setter Property="Validation.ErrorTemplate" Value="{StaticResource ErrorTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self},Path=(Validation.Errors)[0].ErrorContent}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
 </ResourceDictionary>
