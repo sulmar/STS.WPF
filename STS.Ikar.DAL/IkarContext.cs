@@ -27,6 +27,10 @@ namespace STS.Ikar.DAL
 
         public IkarContext()
             : base("IkarConnection")
-        { }
+        {
+            //this.Configuration.LazyLoadingEnabled = true;
+            //this.Configuration.ProxyCreationEnabled = true;
+
+        }
     }
 }

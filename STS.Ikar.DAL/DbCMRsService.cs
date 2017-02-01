@@ -26,10 +26,20 @@ namespace STS.Ikar.DAL
             using (var context = new IkarContext())
             {
                 var cmr = await context.CMRs
-                    .Include(p=>p.Truck)
-                    .Include(p=>p.Driver)
-                    .Include(p=>p.WarehouseDocuments.Select(x=>x.Vehicle))
                     .SingleOrDefaultAsync(s => s.CMRId == id);
+
+                // Pobieranie wskazanej kolekcji
+                await context.Entry(cmr).Collection(p => p.WarehouseDocuments).LoadAsync();
+
+                // Pobranie wskaznej właściwości
+                await context.Entry(cmr).Reference(p => p.Truck).LoadAsync();
+
+                // Zachłanne pobieranie 
+                //var cmr = await context.CMRs
+                //    .Include(p=>p.Truck)
+                //    .Include(p=>p.Driver)
+                //    .Include(p=>p.WarehouseDocuments.Select(x=>x.Vehicle))
+                //    .SingleOrDefaultAsync(s => s.CMRId == id);
 
                 return cmr;
             }
