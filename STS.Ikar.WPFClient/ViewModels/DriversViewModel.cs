@@ -1,4 +1,5 @@
-﻿using STS.Ikar.Interfaces;
+﻿using STS.Ikar.DAL;
+using STS.Ikar.Interfaces;
 using STS.Ikar.MockServices;
 using STS.Ikar.Models;
 using System;
@@ -18,7 +19,7 @@ namespace STS.Ikar.WPFClient.ViewModels
         private IDriversService _DriversService;
 
         public DriversViewModel()
-            : this(new MockDriversService())
+            : this(new DbDriversService())
         {
 
         }

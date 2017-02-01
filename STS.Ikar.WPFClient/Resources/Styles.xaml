@@ -17,6 +17,11 @@
     <Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}" />
 
 
+    <Style TargetType="TextBox">
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+
+
 
     <Style x:Key="DeleteButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
         <Setter Property="Background" Value="Red" />
@@ -26,6 +31,8 @@
 
     <Style  TargetType="TextBlock">
         <Setter Property="Margin" Value="10" />
+        <Setter Property="FontSize" Value="18" />
+
     </Style>
 
 
