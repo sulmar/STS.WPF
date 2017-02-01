@@ -16,5 +16,16 @@ namespace STS.Ikar.Interfaces
         void Add(Driver driver);
 
         void Update(Driver driver);
+
+
+        Task AddAsync(Driver driver);
+
+        Task<IList<Driver>> GetAsync();
+
+        Task<Driver> GetAsync(int id);
+
+        Task UpdateAsync(Driver driver);
+
+        Task DeleteAsync(Driver driver);
     }
 }

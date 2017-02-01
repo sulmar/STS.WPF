@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using STS.Ikar.Models;
+using System.Data.Entity;
 
 namespace STS.Ikar.DAL
 {
@@ -19,6 +20,28 @@ namespace STS.Ikar.DAL
                 context.Drivers.Add(driver);
 
                 context.SaveChanges();
+            }
+        }
+
+        public async Task AddAsync(Driver driver)
+        {
+            using (var context = new IkarContext())
+            {
+                context.Drivers.Add(driver);
+
+                System.Diagnostics.Debug.WriteLine(context.Entry(driver).State);
+
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteAsync(Driver driver)
+        {
+            using (var context = new IkarContext())
+            {
+                context.Drivers.Remove(driver);
+
+                await context.SaveChangesAsync();
             }
         }
 
@@ -38,6 +61,23 @@ namespace STS.Ikar.DAL
             }
         }
 
+        public async Task<IList<Driver>> GetAsync()
+        {
+            using (var context = new IkarContext())
+            {
+                return await context.Drivers.ToListAsync();
+            }
+        }
+
+        public async Task<Driver> GetAsync(int id)
+        {
+            using (var context = new IkarContext())
+            {
+                return await context.Drivers
+                    .SingleOrDefaultAsync(d => d.DriverId == id);
+            }
+        }
+
         public void Update(Driver driver)
         {
             using (var context = new IkarContext())
@@ -46,6 +86,18 @@ namespace STS.Ikar.DAL
             }
         }
 
-        
+        public async Task UpdateAsync(Driver driver)
+        {
+            using (var context = new IkarContext())
+            {
+              //  context.Drivers.Attach(driver);
+
+                context.Entry(driver).State = EntityState.Modified;
+
+                System.Diagnostics.Debug.WriteLine(context.Entry(driver).State);
+
+                await context.SaveChangesAsync();
+            }
+        }
     }
 }

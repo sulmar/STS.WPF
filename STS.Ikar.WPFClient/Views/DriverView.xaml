@@ -35,6 +35,7 @@
                 </Button>
                 <Button Click="{m:MethodBinding Cancel}">Cancel</Button>
                 <Button MouseEnter="{m:EventToCommand SaveCommand}">Send</Button>
+                <Button Click="{m:MethodBinding UpdateAsync}">Update</Button>
             </DockPanel>
 
 

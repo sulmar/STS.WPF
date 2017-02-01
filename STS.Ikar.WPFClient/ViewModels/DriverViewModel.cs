@@ -1,4 +1,5 @@
-﻿using STS.Ikar.Interfaces;
+﻿using STS.Ikar.DAL;
+using STS.Ikar.Interfaces;
 using STS.Ikar.MockServices;
 using STS.Ikar.Models;
 using STS.Ikar.WPFClient.Commands;
@@ -28,14 +29,17 @@ namespace STS.Ikar.WPFClient.ViewModels
         }
 
         public DriverViewModel()
-         : this(new MockDriversService())
+         : this(new DbDriversService())
         {
 
         }
 
         public void Load()
         {
-            Driver = _DriversService.Get(1);
+             Driver = _DriversService.Get(5);
+
+            // Driver = new Driver { Birthday = DateTime.Today };
+
             CurrentDate = DateTime.Now;
         }
 
@@ -111,9 +115,13 @@ namespace STS.Ikar.WPFClient.ViewModels
 
         public async Task SaveAsync()
         {
-            var result = await UpdateFirstNameAsync();
+            await _DriversService.AddAsync(Driver);
+        }
 
-            var result2 = await UpdateLastNameAsync();
+
+        public async Task UpdateAsync()
+        {
+            await _DriversService.UpdateAsync(Driver);
         }
 
         public bool CanSave => !string.IsNullOrEmpty(Driver.FirstName) && !string.IsNullOrEmpty(Driver.LastName);

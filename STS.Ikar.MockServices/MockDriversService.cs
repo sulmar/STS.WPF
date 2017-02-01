@@ -101,5 +101,30 @@ namespace STS.Ikar.MockServices
 
             return drivers.Single(d => d.DriverId == id);
         }
+
+        public Task AddAsync(Driver driver)
+        {
+            return Task.Run(() => Add(driver));
+        }
+
+        public Task<IList<Driver>> GetAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Driver> GetAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(Driver driver)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(Driver driver)
+        {
+            throw new NotImplementedException();
+        }
     }   
 }
