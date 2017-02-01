@@ -14,6 +14,8 @@ namespace STS.Ikar.Models
 
         public string SideNumber { get; set; }
 
+        public string Color { get; set; }
+
 
     }
 }

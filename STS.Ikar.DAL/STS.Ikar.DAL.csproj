@@ -49,9 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\CMRConfiguration.cs" />
+    <Compile Include="Configurations\TruckConfiguration.cs" />
+    <Compile Include="Conventions\DateTime2Convention.cs" />
     <Compile Include="DbCMRsService.cs" />
     <Compile Include="DbDriversService.cs" />
     <Compile Include="IkarContext.cs" />
+    <Compile Include="Migrations\201702010809169_InitialCreate.cs" />
+    <Compile Include="Migrations\201702010809169_InitialCreate.Designer.cs">
+      <DependentUpon>201702010809169_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702011008552_ChangeNumberCMR.cs" />
+    <Compile Include="Migrations\201702011008552_ChangeNumberCMR.Designer.cs">
+      <DependentUpon>201702011008552_ChangeNumberCMR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702011016242_AddColorToTruck.cs" />
+    <Compile Include="Migrations\201702011016242_AddColorToTruck.Designer.cs">
+      <DependentUpon>201702011016242_AddColorToTruck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702011031085_ChangeCreateDateCRM.cs" />
+    <Compile Include="Migrations\201702011031085_ChangeCreateDateCRM.Designer.cs">
+      <DependentUpon>201702011031085_ChangeCreateDateCRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +87,20 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702010809169_InitialCreate.resx">
+      <DependentUpon>201702010809169_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011008552_ChangeNumberCMR.resx">
+      <DependentUpon>201702011008552_ChangeNumberCMR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011016242_AddColorToTruck.resx">
+      <DependentUpon>201702011016242_AddColorToTruck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011031085_ChangeCreateDateCRM.resx">
+      <DependentUpon>201702011031085_ChangeCreateDateCRM.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
