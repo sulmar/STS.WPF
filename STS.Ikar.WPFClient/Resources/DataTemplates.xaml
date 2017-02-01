@@ -5,13 +5,39 @@
                     xmlns:vm="clr-namespace:STS.Ikar.WPFClient.ViewModels"
                     xmlns:local="clr-namespace:STS.Ikar.WPFClient.Resources">
 
+    
+
+    <Style x:Key="DriverStyle" TargetType="StackPanel" >
+        <Setter Property="Background" Value="Yellow" />
+
+        <Style.Triggers>
+            
+            <DataTrigger Binding="{Binding FirstName}" Value="Bartek" >
+                <Setter Property="Background" Value="Red" />
+                <Setter Property="Height" Value="150" />
+            </DataTrigger>
+
+
+            <DataTrigger Binding="{Binding IsWeightOver}" Value="True" >
+                <Setter Property="Background" Value="Blue" />
+            </DataTrigger>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property = "Background" Value="Orange"/>
+            </Trigger>
+            
+            
+        </Style.Triggers>
+        
+    </Style>
 
     <DataTemplate x:Key="DriverTemplate" DataType="model:Driver">
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" Style="{StaticResource DriverStyle}">
             <TextBlock Text="{Binding FirstName}" />
             <TextBlock Text="{Binding LastName}" />
             <TextBlock Text="{Binding Phone}" />
             <TextBlock Text="{Binding Birthday, Converter={c:DateTimeConverter}}" />
+            
         </StackPanel>
     </DataTemplate>
 

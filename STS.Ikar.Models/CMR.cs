@@ -26,8 +26,18 @@ namespace STS.Ikar.Models
 
         public DateTime? DeliveryDate { get; set; }
 
-
+        public int Quantity
+        {
+            get
+            {
+                return WarehouseDocuments.Count();
+            }
+        }
 
         public IList<WarehouseDocument> WarehouseDocuments { get; set; }
+
+        public CMR()
+        {
+        }
     }
 }

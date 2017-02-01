@@ -33,6 +33,15 @@ namespace STS.Ikar.Models
 
         public string FullName => $"{FirstName} {LastName}";
 
+        public bool IsWeightOver 
+        {
+            get
+            {
+                return Weight > 50;
+            }
+
+        }
+
         public string Error
         {
             get
