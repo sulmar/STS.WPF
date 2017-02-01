@@ -15,7 +15,16 @@ namespace STS.Ikar.WPFClient.ViewModels
 {
     public class DriverViewModel : BaseViewModel
     {
-        public Driver Driver { get; set; }
+        private Driver _Driver;
+
+        public Driver Driver
+        {
+            get { return _Driver; }
+            set { _Driver = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public DateTime CurrentDate { get; set; }
 
@@ -36,11 +45,12 @@ namespace STS.Ikar.WPFClient.ViewModels
 
         public void Load()
         {
-             Driver = _DriversService.Get(5);
+            // Driver = _DriversService.Get(5);
 
-            // Driver = new Driver { Birthday = DateTime.Today };
+             Driver = new Driver { Birthday = DateTime.Today };
 
             CurrentDate = DateTime.Now;
+
         }
 
 
@@ -124,7 +134,7 @@ namespace STS.Ikar.WPFClient.ViewModels
             await _DriversService.UpdateAsync(Driver);
         }
 
-        public bool CanSave => !string.IsNullOrEmpty(Driver.FirstName) && !string.IsNullOrEmpty(Driver.LastName);
+        public bool CanSave => Driver.IsValid;
 
         #endregion
     }

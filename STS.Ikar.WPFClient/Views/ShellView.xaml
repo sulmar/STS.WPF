@@ -1,0 +1,41 @@
+﻿<Window x:Class="STS.Ikar.WPFClient.Views.ShellViw"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:STS.Ikar.WPFClient.Views"
+        xmlns:vm="clr-namespace:STS.Ikar.WPFClient.ViewModels"
+        xmlns:v="clr-namespace:STS.Ikar.WPFClient.Views"
+        xmlns:m="clr-namespace:STS.Ikar.WPFClient.MarkupExtensions"
+        mc:Ignorable="d"
+        Title="ShellViw" Height="300" Width="300">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:DriversViewModel}" >
+            <v:Drivers2View />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:DriverViewModel}" >
+            <v:Page2View />
+        </DataTemplate>
+        
+    </Window.Resources>
+
+    <Window.DataContext>
+        <vm:ShellViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <Button Click="{m:MethodBinding Navigate}">View 2</Button>
+            </StackPanel>
+            
+            <!-- Content -->
+
+            <ContentControl Content="{Binding CurrentViewModel}" />
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
